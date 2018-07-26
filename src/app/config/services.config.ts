@@ -25,4 +25,8 @@ export class ServicesConfig {
     urlPartidoPolitico() {
         return this.ServerUrl + '/ppolitico';
     }
+
+    urlEncuestadoras() {
+        return this.ServerUrl + '/encuestadora';
+    }
 }

@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { Routes, RouterModule } from '../../../node_modules/@angular/router';
+import { EncuestasComponent } from './encuestas/encuestas.component';
+import { BannerComponent } from './banner/banner.component';
+import { EncuestadorasService } from '../services/encuestadoras.service';
+import { HttpClientModule } from '../../../node_modules/@angular/common/http';
 
 const routes: Routes = [
   {
@@ -14,7 +18,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    HttpClientModule
   ],
-  declarations: [HomeComponent]
+  declarations: [HomeComponent, EncuestasComponent, BannerComponent],
+  providers: [EncuestadorasService]
 })
 export class HomeModule { }
