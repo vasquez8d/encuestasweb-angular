@@ -1,0 +1,95 @@
+<!--/banner-->
+<div class="banner-inner">
+</div>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a [routerLink]="''">Inicio</a>
+  </li>
+  <li class="breadcrumb-item active">Registra tú candidato</li>
+</ol>
+<!--//banner-->
+<!--/main-->
+<section class="main-content-w3layouts-agileits">
+  <div class="container">
+    <h3 class="tittle">Registra tú candidato</h3>
+    <div class="inner-sec">
+      <div class="login p-5 bg-light mx-auto mw-100">
+        <form [formGroup]="CandidatoRegistroForm">
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="valor01">Nombres</label>
+              <input type="text" class="form-control" id="valor01" formControlName="cand_nombre" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="valor02">Apellido Paterno</label>
+              <input type="text" class="form-control" id="valor02" formControlName="cand_ape_pat" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="valor03">Apellido Materno</label>
+              <input type="text" class="form-control" id="valor03" formControlName="cand_ape_mat" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="valor04">Partido político</label>
+              <select class="form-control" id="valor04" formControlName="part_id" required>
+                <option *ngFor="let partido of listaPartidos" [value]="partido.part_id">{{partido.part_nombre}} - {{partido.part_siglas}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="valor05">Tipo de candidatura</label>
+              <select class="form-control" id="valor05" formControlName="tcan_id" required>
+                <option *ngFor="let tipo of listaTipoCandi" [value]="tipo.tcan_id">{{tipo.tcan_desc}}</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="valor06">Departamento</label>
+              <select (change)="cargarProvincias($event.target.value)" class="form-control" id="valor06" formControlName="ubg_dpt" required>
+                <option *ngFor="let dpt of listaDepartamentos" [value]="dpt.ubg_dpt">{{dpt.ubg_desc}}</option>
+			  </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="valor07">Provincia</label>
+              <select (change)="cargarDistritos($event.target.value)" class="form-control" id="valor07" formControlName="ubg_prv" required>
+                <option *ngFor="let prv of listaProvincias" [value]="prv.ubg_prv">{{prv.ubg_desc}}</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="valor08">Distrito</label>
+              <select class="form-control" id="valor08" formControlName="ubg_dst" required>
+                <option *ngFor="let dst of listaDistritos" [value]="dst.ubg_dst">{{dst.ubg_desc}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="valor09">Link de Facebook</label>
+              <input type="text" class="form-control" id="valor09" formControlName="cand_link_fb">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="valor10">Link de Instagram</label>
+              <input type="text" class="form-control" id="valor10" formControlName="cand_link_inst">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="valor11">Link de Twitter</label>
+              <input type="text" class="form-control" id="valor11" formControlName="cand_link_twt">
+            </div>
+          </div>
+          <button type="button" [disabled]="CandidatoRegistroForm.invalid" (click)="guardarCandidato()" class="btn btn-primary submit mb-4">Registrar</button>
+          <p>
+            <a [routerLink]="'../../../terminos-condiciones'">Al registrar acepto los terminos y condiciones de la página web
+              <b>Encuestas Perú</b>.</a>
+          </p>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!--//main-->
