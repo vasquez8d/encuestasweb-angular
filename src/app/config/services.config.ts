@@ -4,11 +4,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ServicesConfig {
 
-    // private ServerUrl = 'https://circularservices.herokuapp.com';
-    private ServerUrl = 'http://localhost:1337';
-
-    // private publishUrl = 'https://www.circular.pe/';
-    // private publishUrl = 'http://localhost:4200/';
+    private ServerUrl = 'https://encuestas-peru.herokuapp.com';
+    // private ServerUrl = 'http://localhost:1337';
 
     urlCandidato() {
         return this.ServerUrl + '/candidato';
@@ -28,5 +25,9 @@ export class ServicesConfig {
 
     urlEncuestadoras() {
         return this.ServerUrl + '/encuestadora';
+    }
+
+    urlEncuestas() {
+        return this.ServerUrl + '/encuesta';
     }
 }

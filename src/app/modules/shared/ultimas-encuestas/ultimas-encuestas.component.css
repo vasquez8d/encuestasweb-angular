@@ -1,0 +1,9 @@
+.list-encuestadoras li:hover {
+    background-color:#E6DCDA;
+    cursor: pointer;
+}
+
+.ultima-encuesta:hover {
+    background-color:#E6DCDA;
+    cursor: pointer;
+}

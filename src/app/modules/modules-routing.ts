@@ -9,6 +9,10 @@ const routes: Routes = [
     {
         path: 'encuestas',
         loadChildren: './encuestas/encuestas.module#EncuestasModule'
+    },
+    {
+        path: 'encuesta',
+        loadChildren: './encuesta/encuesta.module#EncuestaModule'
     }
 ];
 

@@ -6,6 +6,8 @@ import { EncuestasComponent } from './encuestas/encuestas.component';
 import { BannerComponent } from './banner/banner.component';
 import { EncuestadorasService } from '../services/encuestadoras.service';
 import { HttpClientModule } from '../../../node_modules/@angular/common/http';
+import { EncuestasService } from '../services/encuestas.service';
+import { SharedModule } from '../modules/shared/shared.module';
 
 const routes: Routes = [
   {
@@ -18,9 +20,10 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   declarations: [HomeComponent, EncuestasComponent, BannerComponent],
-  providers: [EncuestadorasService]
+  providers: [EncuestadorasService, EncuestasService]
 })
 export class HomeModule { }
