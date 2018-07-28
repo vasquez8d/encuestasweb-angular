@@ -10,23 +10,8 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContentEnc">
         <ul class="navbar-nav-encuestadoras">
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Encuestas IPSOS-PERÚ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Encuestas IMASÉN</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Encuestas CPI</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Encuestas IDICE</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Encuestas IMA</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Encuestas DATUM</a>
+          <li *ngFor = "let encuestadora of listEncuestadoras" class="nav-item">
+            <a class="nav-link encuestadora-header" (click)="navigateEncuestadora(encuestadora)">{{encuestadora.encu_nombre}}</a>
           </li>
         </ul>
       </div>
@@ -126,11 +111,10 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#"></a>
-              <a class="dropdown-item" href="blog1.html">Encuestadora 1</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="blog2.html">Encuestadora 2</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="blog3.html">Encuestadora 3</a>
+              <div *ngFor = "let encuestadora of listEncuestadoras">
+                <a class="dropdown-item encuestadora-nav-header" (click)="navigateEncuestadora(encuestadora)">{{encuestadora.encu_nombre}}</a>
+                <div class="dropdown-divider"></div>
+              </div>
             </div>
           </li>
           <li class="nav-item dropdown">

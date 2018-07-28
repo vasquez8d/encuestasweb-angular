@@ -18,14 +18,14 @@
         <div class="blog-grid-top">
           <div class="b-grid-top">
             <div class="blog_info_left_grid">
-              <a href="single.html">
+              <a>
                 <img [src]="encuesta.encs_img_url" class="img-fluid" alt="">
               </a>
             </div>
             <div class="blog-info-middle">
               <ul>
                 <li>
-                  <a href="#">
+                  <a>
                     <i class="far fa-calendar-alt"></i>{{encuesta.encs_fec_registro}}</a>
                 </li>
                 <!-- <li class="mx-2">
@@ -42,7 +42,7 @@
           </div>
 
           <h3>
-            <a href="single.html">{{encuesta.encs_titulo}} </a>
+            <a>{{encuesta.encs_titulo}} </a>
           </h3>
           <div [innerHTML]="encuesta.encs_html"></div>
         </div>

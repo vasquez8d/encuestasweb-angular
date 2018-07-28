@@ -10,7 +10,7 @@ import { EncuestaModel } from '../../../models/encuesta.model';
 })
 export class EncuestaComponent implements OnInit {
 
-  public encuesta: EncuestaModel;
+  public encuesta: EncuestaModel = new EncuestaModel;
   constructor(private activatedRoute: ActivatedRoute,
               private encuestaService: EncuestasService) { }
 
@@ -24,7 +24,6 @@ export class EncuestaComponent implements OnInit {
         this.encuestaService.obtenerDetalleEncuesta(params.encs_id).subscribe(
           data => {
             this.encuesta = data.data_result[0];
-            console.log(this.encuesta);
           }
         );
       }

@@ -1,14 +1,24 @@
+<!--/banner-->
+<div class="banner-inner">
+</div>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a [routerLink]="''">Inicio</a>
+  </li>
+  <li class="breadcrumb-item active">Encuestas por Encuestadora</li>
+</ol>
+<!--//banner-->
 <!--/main-->
 <section class="main-content-w3layouts-agileits">
   <div class="container">
-    <h3 id="tittle_encuestas" class="tittle">Últimas Encuestas</h3>
+    <h3 id="tittle_encuestas" class="tittle">{{nombEncuestadora}}</h3>
     <div class="row inner-sec">
       <!--left-->
       <div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
-        <article *ngFor="let encuestas of listUltimasEncuestas" class="blog-grid-top">
+        <article *ngFor="let encuestas of listEncuestadoraEncuestas" class="blog-grid-top">
           <div class="b-grid-top">
             <div class="blog_info_left_grid">
-              <a [routerLink]="['mod/encuesta', encuestas.encs_id, encuestas.encs_slug]">
+              <a (click)="navigateToEncuesta(encuestas)">
                 <img [src]="encuestas.encs_img_url" class="img-fluid" class="img-fluid" alt="">
               </a>
             </div>
@@ -32,10 +42,10 @@
           </div>
 
           <h3>
-            <a [routerLink]="['mod/encuesta', encuestas.encs_id, encuestas.encs_slug]">{{encuestas.encs_titulo}}</a>
+            <a (click)="navigateToEncuesta(encuestas)">{{encuestas.encs_titulo}}</a>
           </h3>
           <p>{{encuestas.encs_resumen}}</p>
-          <a [routerLink]="['mod/encuesta', encuestas.encs_id, encuestas.encs_slug]" class="btn btn-primary read-m">Leer más</a>
+          <a (click)="navigateToEncuesta(encuestas)" class="btn btn-primary read-m">Leer más</a>
         </article>
 
         <nav *ngIf="showPaginator" aria-label="Page navigation example">

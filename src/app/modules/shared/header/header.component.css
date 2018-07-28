@@ -1,0 +1,14 @@
+.encuestadora-header {
+    color: black !important;
+    cursor: pointer;
+}
+
+.encuestadora-header:hover {
+    color: blue !important;
+    cursor: pointer;
+}
+
+.encuestadora-nav-header:hover {
+    cursor: pointer; 
+    color: blue !important;
+}

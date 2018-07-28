@@ -34,7 +34,9 @@ export class UltimasEncuestasComponent implements OnInit {
   listarEncuestadoras() {
     this.encuestadoraService.listaEncuestadoras().subscribe(
       data => {
-        this.listEncuestadoras = data.data_result;
+        if (data.res_service === 'ok') {
+          this.listEncuestadoras = data.data_result;
+        }
       }
     );
   }
@@ -44,6 +46,6 @@ export class UltimasEncuestasComponent implements OnInit {
   }
 
   navigateEncuestadora(encustadora) {
-    this.router.navigateByUrl('mod/encuestas/encuestadoras' + encustadora.encu_id + '/' + encustadora.encu_slug);
+    this.router.navigateByUrl('mod/encuestas/encuestadoras/' + encustadora.encu_id + '/' + encustadora.encu_slug);
   }
 }
