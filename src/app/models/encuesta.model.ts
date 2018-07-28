@@ -13,4 +13,5 @@ export class EncuestaModel {
     encs_est_registro: any;
     encs_fec_registro: any;
     encs_user_id: any;
+    encs_img_url: any;
 }
